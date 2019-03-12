@@ -6,10 +6,17 @@ import {
     WingBlank,
     WhiteSpace,
     Button,
-    Radio
+    Radio,
+    Toast
 } from "antd-mobile";
+import {connect} from "react-redux"
+import {register} from "../../redux/user.redux"
 
-export default class Register extends Component {
+@connect(
+    state => state.user,
+    {register}
+)
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +32,7 @@ export default class Register extends Component {
     }
 
     handleRegister = () => {
-        console.log(this.state)
+        this.props.register(this.state)
     }
 
     render() {
@@ -33,13 +40,13 @@ export default class Register extends Component {
         return (
             <div>
                 <Logo/>
-                <h2>注册页面</h2>
                 <WingBlank>
                     <List>
                         <InputItem onChange={v => this.handleChange('user', v)}>用户</InputItem>
                         <InputItem type="password" onChange={v => this.handleChange('pwd', v)}>密码</InputItem>
                         <InputItem type="password" onChange={v => this.handleChange('repeatpwd', v)}>确认密码</InputItem>
                     </List>
+                    {this.props.msg?<p className="error-msg">{this.props.msg}</p>:null}
                     <WhiteSpace size="lg"/>
                     <List>
                         <RadioItem
@@ -60,3 +67,5 @@ export default class Register extends Component {
         )
     }
 }
+
+export default Register;

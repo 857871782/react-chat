@@ -11,7 +11,6 @@ export default class Login extends Component{
         return (
             <div>
                 <Logo />
-                <h2>登陆页面</h2>
                 <WingBlank>
                     <List>
                         <InputItem>用户</InputItem>
