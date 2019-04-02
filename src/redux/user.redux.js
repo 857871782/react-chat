@@ -12,11 +12,11 @@ const initState = {
 }
 
 function errorMsg(msg) {
-    return {msg, type: ERROR_MSG}
+    return {msg, type: ERROR_MSG};
 }
 
 function registerSuccess(data){
-    return {type: REGISTER_SUCCESS, payload: data}
+    return {type: REGISTER_SUCCESS, payload: data};
 }
 
 export function user(state = initState, action) {

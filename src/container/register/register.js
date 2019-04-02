@@ -42,9 +42,9 @@ class Register extends Component {
                 <Logo/>
                 <WingBlank>
                     <List>
-                        <InputItem onChange={v => this.handleChange('user', v)}>用户</InputItem>
-                        <InputItem type="password" onChange={v => this.handleChange('pwd', v)}>密码</InputItem>
-                        <InputItem type="password" onChange={v => this.handleChange('repeatpwd', v)}>确认密码</InputItem>
+                        <InputItem onChange={v => this.handleChange('user', v)}>用户:</InputItem>
+                        <InputItem type="password" onChange={v => this.handleChange('pwd', v)}>密码:</InputItem>
+                        <InputItem type="password" onChange={v => this.handleChange('repeatpwd', v)}>确认密码:</InputItem>
                     </List>
                     {this.props.msg?<p className="error-msg">{this.props.msg}</p>:null}
                     <WhiteSpace size="lg"/>
