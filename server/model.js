@@ -8,7 +8,7 @@ const model = {
         'user': {type:String, require:true},
         'pwd': {type:String, require:true},
         'type': {type:String, require:true},
-        'avater': {type:String},
+        'avatar': {type:String},
         'desc': {type:String},
         //职位名
         'title': {type:String},
@@ -18,7 +18,12 @@ const model = {
 
     },
     chat: {
-
+        "chatid": {type: String, require: true},
+        "from": {type: String, require: true},
+        "to": {type: String, require: true},
+        "content": {type: String, require: true, default: ''},
+        "read": {type: Boolean, default: false},
+        "create_time": {type: Number, default: new Date().getTime()}
     }
 }
 

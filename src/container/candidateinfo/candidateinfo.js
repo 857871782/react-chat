@@ -5,21 +5,17 @@ import {connect} from "react-redux"
 import AvatarSelector from "../../components/avata-selector/avatar-selector"
 import {update} from "../../redux/user.redux"
 
-import "./bossinfo.css";
-
 @connect(
     state => state.user,
     {update}
 )
-class BossInfo extends Component {
+class CandidateInfo extends Component {
     constructor(props){
         super(props);
         this.state = {
             title: '',
-            company: '',
-            money: '',
-            desc: '',
             avatar: '',
+            desc: ''
         }
     }
 
@@ -41,12 +37,10 @@ class BossInfo extends Component {
         return (
             <div>
                 {redirect && redirect !== path ? <Redirect to={this.props.redirectTo} /> : null}
-                <NavBar mode="dark">Boss完善信息</NavBar>
+                <NavBar mode="dark">完善信息</NavBar>
                 <AvatarSelector selectAvatar={this.selectAvatar}></AvatarSelector>
-                <InputItem onChange={v => this.handleChange('title',v)}>招聘职位</InputItem>
-                <InputItem onChange={v => this.handleChange('company',v)}>公司名称</InputItem>
-                <InputItem onChange={v => this.handleChange('money',v)}>薪资</InputItem>
-                <TextareaItem rows={3} autoHeight title="职位要求" onChange={v => this.handleChange('desc',v)}></TextareaItem>
+                <InputItem onChange={v => this.handleChange('title',v)}>求职职位</InputItem>
+                <TextareaItem rows={3} autoHeight title="简介" onChange={v => this.handleChange('desc',v)}></TextareaItem>
                 <Button 
                     type="primary" 
                     className="save_btn"
@@ -59,4 +53,4 @@ class BossInfo extends Component {
     }
 }
 
-export default BossInfo
+export default CandidateInfo
