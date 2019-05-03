@@ -58,6 +58,7 @@ class Chat extends Component{
                         this.props.history.goBack();
                     }}
                 >{users[userid].name}</NavBar>
+                <div style={{marginBottom: 45}}>
                 {chatmsgs.map(item => {
                     const avatar = require(`../img/${users[item.from].avatar}.png`)
                     return item.from === userid ? (
@@ -73,6 +74,7 @@ class Chat extends Component{
                         </List>
                     )
                 })}
+                </div>
                 <div className="stick-footer">
                     <List>
                         <InputItem
